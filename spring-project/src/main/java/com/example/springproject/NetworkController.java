@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
+
 @RestController
 @RequestMapping("/network")
 @CrossOrigin
@@ -27,7 +29,8 @@ public class NetworkController {
     @PostMapping
     public ResponseEntity<Node> createNode(@RequestBody Node node) {
         Node newNode = networkCrudRepository.save(node);
-        return ResponseEntity.ok().body(newNode);
+        URI uri = URI.create("/network/"+newNode.getid());
+        return ResponseEntity.created(uri).body(newNode);
     }
 
     @DeleteMapping("/{id}")
