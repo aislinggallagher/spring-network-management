@@ -20,5 +20,5 @@ public interface NetworkCrudRepository extends CrudRepository<Node, Long> {
     @Query("UPDATE Node n SET n.latitude = ?1, n.longitude = ?2 WHERE n.id = ?3")
     @Modifying(clearAutomatically = true)
     @Transactional
-    void updateCoords(int latitude, int longitude, Long id);
+    void updateCoords(double latitude, double longitude, Long id);
 }

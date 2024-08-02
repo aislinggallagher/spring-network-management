@@ -46,8 +46,8 @@ public class NetworkControllerTest {
         assertEquals(4, nodeList.size());
         assertEquals("node 3", nodeList.get(2).getName());
         assertEquals("cyprus", nodeList.get(2).getLocation());
-        assertEquals(35, nodeList.get(2).getLatitude());
-        assertEquals(33, nodeList.get(2).getLongitude());
+        assertEquals(35.1264, nodeList.get(2).getLatitude());
+        assertEquals(33.4299, nodeList.get(2).getLongitude());
     }
 
     @Test
@@ -57,8 +57,8 @@ public class NetworkControllerTest {
         assertEquals(2, responseNode.getid());
         assertEquals("node 2", responseNode.getName());
         assertEquals("dublin", responseNode.getLocation());
-        assertEquals(53, responseNode.getLatitude());
-        assertEquals(-6, responseNode.getLongitude());
+        assertEquals(53.3498, responseNode.getLatitude());
+        assertEquals(-6.2603, responseNode.getLongitude());
     }
 
     @Test
@@ -76,13 +76,13 @@ public class NetworkControllerTest {
 
         assertNotEquals("node 2", nodeList.get(1).getName());
         assertNotEquals("dublin", nodeList.get(1).getLocation());
-        assertNotEquals(53, nodeList.get(1).getLatitude());
-        assertNotEquals(-6, nodeList.get(1).getLongitude());
+        assertNotEquals(53.3498, nodeList.get(1).getLatitude());
+        assertNotEquals(-6.2603, nodeList.get(1).getLongitude());
 
         assertEquals("node 3", nodeList.get(1).getName());
         assertEquals("cyprus", nodeList.get(1).getLocation());
-        assertEquals(35, nodeList.get(1).getLatitude());
-        assertEquals(33, nodeList.get(1).getLongitude());
+        assertEquals(35.1264, nodeList.get(1).getLatitude());
+        assertEquals(33.4299, nodeList.get(1).getLongitude());
     }
 
     @Test
@@ -110,8 +110,8 @@ public class NetworkControllerTest {
     @Test
     public void testUpdateNodeCoords() {
         Node originalNode = restTemplate.getForEntity("/network/1", Node.class).getBody();
-        assertEquals(53, originalNode.getLatitude());
-        assertEquals(-7, originalNode.getLongitude());
+        assertEquals(53.4239, originalNode.getLatitude());
+        assertEquals(-7.9403, originalNode.getLongitude());
 
         CoordinatesDTO coords = new CoordinatesDTO();
         coords.setLatitude(15);

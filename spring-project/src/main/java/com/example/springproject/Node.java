@@ -9,8 +9,8 @@ import jakarta.persistence.Id;
 public class Node {
     private String name;
     private String location;
-    private int latitude;
-    private int longitude;
+    private double latitude;
+    private double longitude;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +19,7 @@ public class Node {
     public Node() {
     }
 
-    public Node(String name, String location, int latitude, int longitude) {
+    public Node(String name, String location, double latitude, double longitude) {
         this.name = name;
         this.location = location;
         this.latitude = latitude;
@@ -38,11 +38,11 @@ public class Node {
         return location;
     }
 
-    public int getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public int getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
@@ -53,11 +53,11 @@ public class Node {
         this.location = location;
     }
 
-    public void setLongitude(int longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 
-    public void setLatitude(int latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 }

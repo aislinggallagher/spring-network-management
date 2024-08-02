@@ -13,12 +13,12 @@ public class SeedDB {
     @PostConstruct
     public void init() {
         jdbcTemplate.update("insert into NODE(name, location, latitude, longitude) values(?, ?, ?, ?)",
-                "node 1", "athlone", 53, -7);
+                "node 1", "athlone", 53.4239, -7.9403);
         jdbcTemplate.update("insert into NODE(name, location, latitude, longitude) values(?, ?, ?, ?)",
-                "node 2", "dublin", 53, -6);
+                "node 2", "dublin", 53.3498, -6.2603);
         jdbcTemplate.update("insert into NODE(name, location, latitude, longitude) values(?, ?, ?, ?)",
-                "node 3", "cyprus", 35, 33);
+                "node 3", "cyprus", 35.1264, 33.4299);
         jdbcTemplate.update("insert into NODE(name, location, latitude, longitude) values(?, ?, ?, ?)",
-                "node 4", "beijing", 40, 116);
+                "node 4", "beijing", 39.9042, 116.4074);
     }
 }
